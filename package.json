@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/ara-ta3/hubot-vg-8th-floors#readme",
   "dependencies": {
-    "node-vg-8th-floors": "^1.0.0"
+    "node-vg-8th-floors": "^1.0"
   }
 }
