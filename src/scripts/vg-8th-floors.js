@@ -38,8 +38,13 @@ const stringMap = {
 module.exports = (robot) => {
     robot.respond(/(.+)$/i, function(msg) {
         const matched = msg.match[1];
+        const floorName = stringMap[matched];
+        if (typeof floorName === "undefined") {
+            robot.logger.error(`floor name: ${floorName}`);
+            return;
+        }
         try {
-            const floor = vg8thFloor(stringMap[matched]);
+            const floor = vg8thFloor(floorName);
             msg.send([
                 "```",
                 floor,
