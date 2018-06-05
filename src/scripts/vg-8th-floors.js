@@ -40,18 +40,13 @@ module.exports = (robot) => {
         const matched = msg.match[1];
         const floorName = stringMap[matched];
         if (typeof floorName === "undefined") {
-            robot.logger.error(`floor name: ${floorName}`);
             return;
         }
-        try {
-            const floor = vg8thFloor(floorName);
-            msg.send([
-                "```",
-                floor,
-                "```"
-            ].join("\n"));
-        } catch (e) {
-            robot.logger.error(e);
-        }
+        const floor = vg8thFloor(floorName);
+        msg.send([
+            "```",
+            floor,
+            "```"
+        ].join("\n"));
     });
 };
